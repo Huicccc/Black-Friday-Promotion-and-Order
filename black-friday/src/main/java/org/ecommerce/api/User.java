@@ -1,4 +1,4 @@
-package org.ecom.api;
+package org.ecommerce.api;
 
 public class User {
   public String userName;

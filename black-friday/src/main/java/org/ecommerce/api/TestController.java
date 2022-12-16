@@ -1,4 +1,4 @@
-package org.ecom.api;
+package org.ecommerce.api;
 
 import java.util.UUID;
 import org.springframework.web.bind.annotation.GetMapping;
