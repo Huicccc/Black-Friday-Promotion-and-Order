@@ -8,9 +8,20 @@ public class UserService {
 
   @Autowired
   UserDomainRepository userDomainRepository;
+
   public UserDomain registerUser(UserDomain userDomain) {
-    userDomainRepository.createUser(userDomain);
-    return userDomain;
+    return userDomainRepository.createUser(userDomain);
   }
 
+  public UserDomain getUserById(String id) {
+    return userDomainRepository.getUserByUserId(id);
+  }
+
+  public UserDomain getUserByName(String userName) {
+    return userDomainRepository.getUserByUserName(userName);
+  }
+
+  public UserDomain updateUserDomain(UserDomain userDomain) {
+    return userDomainRepository.updateUser(userDomain);
+  }
 }

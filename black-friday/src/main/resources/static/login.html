@@ -2,13 +2,13 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-  <title>Ecommerce-Login</title>
+  <title>ECommerce-Login</title>
   <link rel="icon" href="img/icon.png">
 
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" type="text/css" href="css/all.css" />
-  <link rel="stylesheet" type="text/css" href="css/pages-ecommerce-index.css" />
+  <link rel="stylesheet" type="text/css" href="css/pages-skillup-index.css" />
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -67,7 +67,7 @@
   <!--主内容-->
   <div class="checkout py-container">
     <div class="checkout-tit">
-      <h4 class="tit-txt">Welcome to Ecommerce Page!</h4>
+      <h4 class="tit-txt">Welcome to ECommerce Page!</h4>
     </div>
     <div class="py-container" >
       <form name="loginForm" >
@@ -104,8 +104,8 @@
                 <li>Contact Us</li>
                 <li>Help Centre</li>
                 <li>Return & Exchanges</li>
-                <li>Ecommerce Financing</li>
-                <li>Ecommerce Gift Card</li>
+                <li>ECommerce Financing</li>
+                <li>ECommerce Gift Card</li>
               </ul>
             </div>
             <div class="yui3-u-1-6">
@@ -124,7 +124,7 @@
                 <li>In-Home Advisor</li>
                 <li>Trade-In Program</li>
                 <li>Electronics Recycling</li>
-                <li>Ecommerce Health</li>
+                <li>ECommerce Health</li>
               </ul>
             </div>
             <div class="yui3-u-1-6">
@@ -132,9 +132,9 @@
               <ul class="unstyled">
                 <li>Careers</li>
                 <li>Corporate Information</li>
-                <li>About Ecommerce Marketplace</li>
-                <li>Sell on Ecommerce Marketplace</li>
-                <li>Ecommerce Affiliate Program</li>
+                <li>About ECommerce Marketplace</li>
+                <li>Sell on ECommerce Marketplace</li>
+                <li>ECommerce Affiliate Program</li>
               </ul>
             </div>
           </div>
@@ -147,7 +147,7 @@
   <script src="/js/vue.js"></script>
   <script src="/js/axios.js"></script>
 
-  <script src="js/e_commerce_internal/util.js"></script>
+  <script src="js/internal/util.js"></script>
   <script type="text/javascript">
     function login() {
       if(!checkInput()) return;
@@ -169,15 +169,18 @@
           },
           success: function (data) {
               alert("login! ");
-              setCookie("user_name", data.userName); //userName = api.inDto.userName
-              setCookie("user_id", data.userId);
+              setCookie("user_name", data.result.userName);
+              setCookie("user_id", data.result.userId);
               //refresh account status： longin
               account_status();
               <!-- window.location.href = "promotion_activity.html;-->
+              window.close();
           },
           error: function (data) {
               console.log(data);
-              alert("error: " + data.responseText);
+              // alert("error: " + data.responseText);
+              alert("error: " + data.responseJSON.msg);
+
           }
       });
       return false;
@@ -186,7 +189,7 @@
     function signup() {
       if(!checkInput()) return;
       var username = document.loginForm.username.value;
-			var password = document.loginForm.password.value;
+      var password = document.loginForm.password.value;
 
       var jsonObj = {};
       jsonObj["userName"] = username;
@@ -196,33 +199,35 @@
 
       $.ajax({
           type: 'POST',
-          url: 'http://localhost:8090/account', //不是直接进入这个网页，后端api /account
+          url: 'http://localhost:8090/account',
           data: jsonStr,
           headers: {
               'Content-Type': 'application/json;charset=UTF-8'
           },
           success: function (data) {
               alert("signup! ");
-              document.cookie="name="+data.userName;
+              console.log(data);
+              document.cookie="name="+data.result.userName;
               account_status();
               <!-- window.location.href = "promotion_activity.html;-->
           },
           error: function (data) {
               console.log(data);
-              alert("error: " + data.responseText);
+              //alert("error: " + data.responseText);
+              alert("error: " + data.responseJSON.msg);
           }
       });
       return false;
     }
 
-    //检查用户输入
+    //check input
 		function checkInput(){
 			if(checkUsername() && checkPassword()){
 				 return true;
 			 }
 			return false;
 		}
-		//检查登录用户名
+		//check username
 		function checkUsername(){
 			var username = document.loginForm.username;
 			if(username.value.length!=0){
@@ -232,7 +237,7 @@
 				return false;
 			}
 		}
-		//检查登录密码
+		//check password
 		function checkPassword(){
 			var password = document.loginForm.password;
 			if(password.value.length!=0){

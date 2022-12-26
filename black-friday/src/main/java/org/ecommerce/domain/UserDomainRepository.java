@@ -1,12 +1,14 @@
 package org.ecommerce.domain;
 
 public interface UserDomainRepository {
-  void createUser(UserDomain userDomain);
 
-  UserDomain getUserByUserName(String userName);
+  UserDomain createUser(UserDomain userDomain);
 
   UserDomain getUserByUserId(String userId);
 
-  void updateUser(UserDomain userDomain);
+  UserDomain getUserByUserName(String userName);
+
+
+  UserDomain updateUser(UserDomain userDomain);
 
 }
