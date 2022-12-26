@@ -45,6 +45,79 @@
       <artifactId>flyway-mysql</artifactId>
     </dependency>
 
+    <!-- JOOQ -->
+    <dependency>
+      <groupId>org.jooq</groupId>
+      <artifactId>jooq</artifactId>
+      <version>3.14.16</version>
+    </dependency>
+
+    <!-- lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+
+    <!-- starter validation -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq-codegen-maven</artifactId>
+        <version>3.14.16</version>  <!-- not in parent -->
+        <executions>
+          <execution>
+            <goals>
+              <!-- target generate Java code -->
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <!-- JDBC -->
+          <jdbc>
+            <driver>com.mysql.cj.jdbc.Driver</driver>
+            <!-- mySQL -->
+            <url>jdbc:mysql://localhost:3306/blackfriday?serverTimezone=GMT</url>
+            <user>root</user>
+            <password>root</password>
+          </jdbc>
+
+          <generator>
+            <!-- generate code -->
+            <name>org.jooq.codegen.JavaGenerator</name>
+            <database>
+              <name>org.jooq.meta.mysql.MySQLDatabase</name>
+              <!--include all tables -->
+              <includes>.*</includes>
+              <!-- excludes tables | for seperator-->
+              <excludes>flyway_schema_history</excludes>
+              <!--database name-->
+              <inputSchema>ecom</inputSchema>
+            </database>
+
+            <generate>
+              <javaTimeTypes>true</javaTimeTypes> <!--database type time convert to java 8-->
+              <springAnnotations>ture</springAnnotations>
+            </generate>
+
+            <target>
+              <!--generate code package name and directory -->
+              <packageName>org.ecommerce.infrastructure.jooq</packageName>
+              <directory>src/main/java</directory>
+            </target>
+          </generator>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
