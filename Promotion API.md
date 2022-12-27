@@ -126,10 +126,16 @@ POST: “/promotion”;
 ```
 
 #### **Postman Tests**
-create new promotion 
+
+<img width="597" alt="image" src="https://user-images.githubusercontent.com/105135459/209602754-21caabc9-374d-4d31-a1b9-802a7acb03a2.png">
 
 
 #### **Frontend Tests**
+
+<img width="798" alt="image" src="https://user-images.githubusercontent.com/105135459/209602768-32d85a08-1414-4737-a6b3-9ca0d88b4cd1.png">
+
+<img width="779" alt="image" src="https://user-images.githubusercontent.com/105135459/209735885-eed4d648-346e-4101-bcce-3f79d794e555.png">
+
 
 
 ## **2. getPromotionById CommodityOutDto**
@@ -165,8 +171,11 @@ GET: “/promotion/id/{id}”;
 #### **Postman Tests**
 1)    get user by id
 
+<img width="645" alt="image" src="https://user-images.githubusercontent.com/105135459/209602828-48cbf30e-9374-464d-ac98-a7c08c8d1f79.png">
 
 2)    wrong id
+
+<img width="645" alt="image" src="https://user-images.githubusercontent.com/105135459/209602877-9aad14ab-87e9-41c5-95c8-bfdbc8502a33.png">
 
 
 
@@ -199,10 +208,9 @@ GET: “/promotion/status/{status}”;
 ```
 
 #### **Postman Tests**
-1)    get promotion
+    
+<img width="551" alt="image" src="https://user-images.githubusercontent.com/105135459/209602890-f17630f4-4f5f-4738-9698-5f7f4c0cf3d2.png">
 
-
-2)    wrong status 
 
 
 ## **4. boolean lockPromotionStock**
@@ -225,7 +233,12 @@ true/flase
 ```
 
 #### **Postman Tests**
-??
+
+<img width="1238" alt="image" src="https://user-images.githubusercontent.com/105135459/209602969-e9668885-9622-4881-a1d6-b00d1f9d8bea.png">
+<img width="667" alt="image" src="https://user-images.githubusercontent.com/105135459/209602974-9d2d6b51-50ea-4aa4-821f-c9694298dda0.png">
+<img width="1244" alt="image" src="https://user-images.githubusercontent.com/105135459/209602976-b6ccc0c7-108d-4c0b-aa0d-fdec7cc72006.png">
+
+
 
 
 ## **5. boolean deductPromotionStock**
@@ -245,8 +258,23 @@ true/false
 ```
 
 #### **Postman Tests**
-??
-  
+1) true
+    
+<img width="1244" alt="image" src="https://user-images.githubusercontent.com/105135459/209603003-0f2a9547-ab4e-4881-b902-c6904b1795cb.png">
+
+<img width="637" alt="image" src="https://user-images.githubusercontent.com/105135459/209603019-b44088ba-f7ef-4ac9-b120-6a2b79ed42b4.png">
+
+<img width="1244" alt="image" src="https://user-images.githubusercontent.com/105135459/209603031-4c6f0c87-f665-4b26-a96c-ce37b5ef1842.png">
+
+2) false
+    
+<img width="1238" alt="image" src="https://user-images.githubusercontent.com/105135459/209603060-2e0afbf2-7c81-41ca-adf5-d00d5c1fa27e.png">
+<img width="660" alt="image" src="https://user-images.githubusercontent.com/105135459/209603092-d92ac716-8668-4a9b-bea0-ee9b717c751e.png">
+
+
+
+    
+    
 ## **6. boolean revertPromtionStock**
 #### **Path**
 POST: “/promotion/revert/id/{id}”;
@@ -263,7 +291,17 @@ true
 ```
 
 #### **Postman Tests**
-??
+
+<img width="1238" alt="image" src="https://user-images.githubusercontent.com/105135459/209603108-71af9d7a-b3d9-432c-a242-9fb1538507c4.png">
+
+<img width="666" alt="image" src="https://user-images.githubusercontent.com/105135459/209603117-409a15a1-659f-4034-820b-0fe6e67328d9.png">
+
+<img width="1244" alt="image" src="https://user-images.githubusercontent.com/105135459/209603128-7cfaeb46-36ee-4dc1-a88b-80fd8413fd2d.png">
+
+<img width="736" alt="image" src="https://user-images.githubusercontent.com/105135459/209603133-ecbaaaba-1c20-4f12-a925-57df55c72a1d.png">
+
+<img width="1243" alt="image" src="https://user-images.githubusercontent.com/105135459/209603135-c662cc5a-af45-4c3f-ae7c-c272491ed434.png">
+
   
 
 
