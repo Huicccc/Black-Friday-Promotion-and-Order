@@ -129,6 +129,8 @@ POST: “/promotion”;
 
 <img width="597" alt="image" src="https://user-images.githubusercontent.com/105135459/209602754-21caabc9-374d-4d31-a1b9-802a7acb03a2.png">
 
+<img width="1095" alt="image" src="https://user-images.githubusercontent.com/105135459/210035613-e4b4a15a-1fc3-450b-9684-9a3b1547733b.png">
+
 
 #### **Frontend Tests**
 
@@ -136,6 +138,13 @@ POST: “/promotion”;
 
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/105135459/209735885-eed4d648-346e-4101-bcce-3f79d794e555.png">
 
+<img width="996" alt="image" src="https://user-images.githubusercontent.com/105135459/210035632-e98ede5e-1b5c-439e-810a-a2fa98a9e5ef.png">
+
+<img width="1020" alt="image" src="https://user-images.githubusercontent.com/105135459/210035643-91f3346e-8d43-4099-9be3-aa0883355c05.png">
+
+<img width="1140" alt="image" src="https://user-images.githubusercontent.com/105135459/210035658-005b445a-13fc-455e-8666-857150af5fad.png">
+
+<img width="1140" alt="image" src="https://user-images.githubusercontent.com/105135459/210035666-ad6e8ce0-f585-4a16-8fae-43a6746e9567.png">
 
 
 ## **2. getPromotionById CommodityOutDto**
