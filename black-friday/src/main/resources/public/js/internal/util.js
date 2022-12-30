@@ -22,7 +22,7 @@ function setCookie(name,value)
     document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }
 
-//读取cookies
+//read cookies
 function getCookie(name)
 {
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
@@ -34,7 +34,7 @@ function getCookie(name)
         return null;
 }
 
-//删除cookies
+//delete cookies
 function delCookie(name)
 {
     var exp = new Date();
@@ -86,7 +86,7 @@ function serializeForm(formData){
 }
 
 function GetRequest() {
-    var url = location.search; //获取url中含"?"符后的字串
+    var url = location.search; //url string after and including "?"
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
         var str = url.substr(1);

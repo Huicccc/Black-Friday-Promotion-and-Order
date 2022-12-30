@@ -60,11 +60,11 @@ window.onload = function() {
 				},
 				success: function (data) {
 					console.log(data);
-					$('#description').html(data.description);
+					$('#description').html(data.result.description);
 
-					document.getElementById('banner1').src = "img/items/" + data.imageUrl + "/banner1.jpg";
-					document.getElementById('banner2').src = "img/items/" + data.imageUrl + "/banner2.jpg";
-					document.getElementById('banner3').src = "img/items/" + data.imageUrl + "/banner3.jpg";
+					document.getElementById('banner1').src = "img/items/" + data.result.imageUrl + "/banner1.jpg";
+					document.getElementById('banner2').src = "img/items/" + data.result.imageUrl + "/banner2.jpg";
+					document.getElementById('banner3').src = "img/items/" + data.result.imageUrl + "/banner3.jpg";
 				},
 				error: function (data) {
 					alert("error: " + data);
@@ -90,7 +90,7 @@ window.onload = function() {
 					<div class="shortcut">
 						<ul class="fl">
 							<li class="f-item"></li>
-							<li class="f-item"><a href="login.html" target="_blank" id="account_action">please login</a></li>
+							<li class="f-item"><a href="../../../../../../../Desktop/Black-Friday-Promotion-and-Order/black-friday/src/main/resources/static/login.html" target="_blank" id="account_action">please login</a></li>
 						</ul>
 						<div class="fr">
 							<ul class="types">
