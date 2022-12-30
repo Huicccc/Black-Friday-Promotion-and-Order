@@ -1,10 +1,6 @@
-/**
- * Created by hans on 2016/10/31.
- * 购物车数据
- */
 var cartModel = {
 
-    // 立即购买商品
+    // buy
     add : function (data, success) {
         czHttp.getJSON('./data/success.json', data, function (responseData) {
             if(responseData.isok){
@@ -13,7 +9,7 @@ var cartModel = {
         });
     },
 
-    // 删除购物车商品
+    // delete
     remove : function (data, success) {
         czHttp.getJSON('./data/success.json', data, function (responseData) {
             if(responseData.isok){
@@ -22,7 +18,7 @@ var cartModel = {
         });
     },
 
-    // 修改商品数量
+    // modify
     changeNumber : function (data, success) {
         czHttp.getJSON('./data/success.json', data, function (responseData) {
             if(responseData.isok){
@@ -31,7 +27,7 @@ var cartModel = {
         });
     },
 
-    // 购物车统计
+    // analyse
     subtotal : function (success) {
         czHttp.getJSON('./data/orders.json', data, function (responseData) {
             if(responseData.isok){
@@ -40,7 +36,7 @@ var cartModel = {
         });
     },
 
-    // 购物车列表
+    // list
     list : function (success) {
 
         czHttp.getJSON('./data/orders.json', {}, function(responseData){

@@ -14,7 +14,6 @@ import lombok.Setter;
 public class UserOutDto {
 
   private String userId;
+
   private String userName;
-
-
 }

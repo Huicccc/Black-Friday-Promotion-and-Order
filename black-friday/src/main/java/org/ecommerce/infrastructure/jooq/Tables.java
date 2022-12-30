@@ -4,6 +4,9 @@
 package org.ecommerce.infrastructure.jooq;
 
 
+import org.ecommerce.infrastructure.jooq.tables.Commodity;
+import org.ecommerce.infrastructure.jooq.tables.Orders;
+import org.ecommerce.infrastructure.jooq.tables.Promotion;
 import org.ecommerce.infrastructure.jooq.tables.User;
 
 
@@ -12,6 +15,21 @@ import org.ecommerce.infrastructure.jooq.tables.User;
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>ecom.commodity</code>.
+     */
+    public static final Commodity COMMODITY = Commodity.COMMODITY;
+
+    /**
+     * The table <code>ecom.orders</code>.
+     */
+    public static final Orders ORDERS = Orders.ORDERS;
+
+    /**
+     * The table <code>ecom.promotion</code>.
+     */
+    public static final Promotion PROMOTION = Promotion.PROMOTION;
 
     /**
      * The table <code>ecom.user</code>.

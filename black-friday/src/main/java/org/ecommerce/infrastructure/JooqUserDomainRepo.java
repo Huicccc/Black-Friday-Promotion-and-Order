@@ -1,8 +1,8 @@
 package org.ecommerce.infrastructure;
 
 import java.util.Optional;
-import org.ecommerce.domain.UserDomain;
-import org.ecommerce.domain.UserDomainRepository;
+import org.ecommerce.domain.user.UserDomain;
+import org.ecommerce.domain.user.UserDomainRepository;
 import org.ecommerce.infrastructure.jooq.tables.User;
 import org.ecommerce.infrastructure.jooq.tables.records.UserRecord;
 import org.jooq.DSLContext;
