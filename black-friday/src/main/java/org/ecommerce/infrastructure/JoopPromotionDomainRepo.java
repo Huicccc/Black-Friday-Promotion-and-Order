@@ -10,6 +10,8 @@ import org.ecommerce.infrastructure.jooq.tables.records.PromotionRecord;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Repository("optimistic-lock")
@@ -46,6 +48,7 @@ public class JoopPromotionDomainRepo implements PromotionRepository, PromotionSt
   }
 
   @Override
+  @Transactional(propagation = Propagation.REQUIRED)
   public boolean lockStock(String id) {
     /**
      * update promotion

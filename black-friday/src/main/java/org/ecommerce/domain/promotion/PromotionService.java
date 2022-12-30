@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.ecommerce.domain.promotion.stockStrategy.PromotionStockOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Slf4j
@@ -30,6 +32,7 @@ public class PromotionService {
     return promotionRepository.getPromotionByPromotionStatus(status);
   }
 
+  @Transactional(propagation = Propagation.REQUIRED)
   public boolean lockStock(String id) {
     return promotionStockOperation.lockStock(id);
   }

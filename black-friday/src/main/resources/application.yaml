@@ -13,3 +13,6 @@ promotion:
   #  stock-strategy: sync
   #  stock-strategy: oversell
   stock-strategy: optimistic-lock
+order:
+  data-center: 1
+  machine-num: 1
