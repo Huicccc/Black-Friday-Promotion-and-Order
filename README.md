@@ -16,6 +16,19 @@
 
 <img width="1075" alt="Screen Shot 2022-12-16 at 10 25 34 PM" src="https://user-images.githubusercontent.com/105135459/208221618-dcedf44f-d0d9-4af2-979d-36059f3409df.png">
 
+## Promotion Oversell Strategies
+- Oversell
+- Synchronized
+- Optimistic Lock
+![Picture1](https://user-images.githubusercontent.com/105135459/210188109-ff83d6bf-f180-4567-b1fe-5c2441736111.png)
+
+## Decouple OrderProcessing 
+- Redis & Lua 
+- RocketMQ
+
+## Microservice
+<img width="984" alt="image" src="https://user-images.githubusercontent.com/105135459/210188251-687198e3-3db0-40d3-b748-0de9aeb4a29a.png">
+
 
 ## Demo
 
