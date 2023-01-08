@@ -1,4 +1,4 @@
-package org.ecommerce.infrastructure;
+package org.ecommerce.infrastructure.jooqrepo;
 
 public interface RecordDomainMapping<Record, Domain> {
 

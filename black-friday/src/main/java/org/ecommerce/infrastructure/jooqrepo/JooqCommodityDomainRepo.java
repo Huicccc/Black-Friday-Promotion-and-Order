@@ -1,4 +1,4 @@
-package org.ecommerce.infrastructure;
+package org.ecommerce.infrastructure.jooqrepo;
 
 import java.util.Optional;
 import org.ecommerce.domain.commodity.CommodityDomain;

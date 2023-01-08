@@ -5,7 +5,6 @@ package org.ecommerce.infrastructure.jooq.tables.records;
 
 
 import java.time.LocalDateTime;
-
 import org.ecommerce.infrastructure.jooq.tables.Promotion;
 import org.jooq.Field;
 import org.jooq.Record1;
