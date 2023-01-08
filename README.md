@@ -27,10 +27,13 @@
 
 ## Version2 - Decouple OrderProcessing 
 - Redis & Lua 
-[PromotionCache]() </br>
+[PromotionCache](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/promotionServiceV2.md) </br>
 
 - RocketMQ
 [Order]
+
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/105135459/211179108-12fad797-939a-4374-88c3-c3b9da72483e.png">
+
 
 ## Version3 - Microservice
 ![c9f1f7a2-b654-49e3-aece-feda3dfee8d6](https://user-images.githubusercontent.com/105135459/211178762-c2f63fcc-2775-4507-8f02-c6edb9c6ccb1.png)
