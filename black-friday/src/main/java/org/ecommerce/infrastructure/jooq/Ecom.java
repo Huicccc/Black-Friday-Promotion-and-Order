@@ -6,7 +6,6 @@ package org.ecommerce.infrastructure.jooq;
 
 import java.util.Arrays;
 import java.util.List;
-
 import org.ecommerce.infrastructure.jooq.tables.Commodity;
 import org.ecommerce.infrastructure.jooq.tables.Orders;
 import org.ecommerce.infrastructure.jooq.tables.Promotion;

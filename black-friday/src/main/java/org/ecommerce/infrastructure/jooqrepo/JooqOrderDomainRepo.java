@@ -1,4 +1,4 @@
-package org.ecommerce.infrastructure;
+package org.ecommerce.infrastructure.jooqrepo;
 
 import org.ecommerce.domain.order.OrderDomain;
 import org.ecommerce.domain.order.OrderRepository;
@@ -12,8 +12,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class JooqOrderDomainRepo implements OrderRepository,
-    RecordDomainMapping<OrdersRecord, OrderDomain> {
+public class JooqOrderDomainRepo implements OrderRepository {
 
   @Autowired
   DSLContext dslContext;
@@ -27,8 +26,6 @@ public class JooqOrderDomainRepo implements OrderRepository,
 
   }
 
-
-  @Override
   public OrderDomain toDomain(OrdersRecord record) {
     return OrderDomain.builder()
         .orderNumber(record.getOrderNumber())
@@ -42,7 +39,6 @@ public class JooqOrderDomainRepo implements OrderRepository,
         .build();
   }
 
-  @Override
   public OrdersRecord toRecord(OrderDomain domain) {
     return new OrdersRecord(
         domain.getOrderNumber(),
@@ -66,5 +62,4 @@ public class JooqOrderDomainRepo implements OrderRepository,
   public void updateOrder(OrderDomain orderDomain) {
     dslContext.executeUpdate(toRecord(orderDomain));
   }
-
 }

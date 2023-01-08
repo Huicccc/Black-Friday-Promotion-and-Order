@@ -7,8 +7,10 @@ import java.util.stream.Collectors;
 import org.ecommerce.api.dto.in.PromotionInDto;
 import org.ecommerce.api.dto.out.PromotionOutDto;
 import org.ecommerce.api.util.ResponseUtil;
+import org.ecommerce.application.promotion.PromotionServiceApplication;
 import org.ecommerce.domain.promotion.PromotionDomain;
 import org.ecommerce.domain.promotion.PromotionService;
+import org.ecommerce.domain.promotionStockCache.PromotionStockCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,12 @@ public class PromotionController {
   @Autowired
   PromotionService promotionService;
 
+  @Autowired
+  PromotionServiceApplication promotionServiceApplication;
+
+  @Autowired
+  PromotionStockCacheService promotionStockCacheService;
+
   @PostMapping
   public ResponseEntity<PromotionOutDto> createPromotion(
       @RequestBody PromotionInDto promotionInDto) {
@@ -36,7 +44,8 @@ public class PromotionController {
 
   @GetMapping("/id/{id}")
   public ResponseEntity<PromotionOutDto> getPromotionById(@PathVariable("id") String id) {
-    PromotionDomain promotionDomain = promotionService.getPromotionById(id);
+    // save to redis, if hit promotion cache, stock may not accurate
+    PromotionDomain promotionDomain = promotionServiceApplication.getPromotionById(id);
     if (Objects.isNull(promotionDomain)) {
       return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(null);
     }
@@ -51,6 +60,40 @@ public class PromotionController {
         promotionDomainList.stream().map(this::toPromotionOutDto).collect(Collectors.toList())
     );
   }
+
+  @PostMapping("/lock/id/{id}")
+  public ResponseEntity<Boolean> lockPromotionStock(@PathVariable("id") String id) {
+    // save to cache
+    PromotionDomain promotionDomain = promotionServiceApplication.getPromotionById(id);
+    if (Objects.isNull(promotionDomain)) {
+      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(false);
+    }
+    // todo: need to save to cache
+    // boolean isLocked = promotionService.lockStock(id);
+    boolean isLocked = promotionStockCacheService.lockStock(id);
+    return ResponseEntity.status(ResponseUtil.SUCCESS).body(isLocked);
+  }
+
+  @PostMapping("/deduct/id/{id}")
+  public ResponseEntity<Boolean> deductPromotionStock(@PathVariable("id") String id) {
+    PromotionDomain promotionDomain = promotionService.getPromotionById(id);
+    if (Objects.isNull(promotionDomain)) {
+      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(false);
+    }
+    boolean isLocked = promotionService.deductStock(id);
+    return ResponseEntity.status(ResponseUtil.SUCCESS).body(isLocked);
+  }
+
+  @PostMapping("/revert/id/{id}")
+  public ResponseEntity<Boolean> revertPromotionStock(@PathVariable("id") String id) {
+    PromotionDomain promotionDomain = promotionServiceApplication.getPromotionById(id);
+    if (Objects.isNull(promotionDomain)) {
+      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(false);
+    }
+    boolean isReverted = promotionStockCacheService.revertStock(id);
+    return ResponseEntity.status(ResponseUtil.SUCCESS).body(isReverted);
+  }
+
 
   private PromotionDomain toDomain(PromotionInDto promotionInDto) {
     return PromotionDomain.builder()
@@ -84,35 +127,5 @@ public class PromotionController {
         .imageUrl(promotionDomain.getImageUrl())
         .status(promotionDomain.getStatus())
         .build();
-  }
-
-  @PostMapping("/lock/id/{id}")
-  public ResponseEntity<Boolean> lockPromotionStock(@PathVariable("id") String id) {
-    PromotionDomain promotionDomain = promotionService.getPromotionById(id);
-    if (Objects.isNull(promotionDomain)) {
-      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(false);
-    }
-    boolean isLocked = promotionService.lockStock(id);
-    return ResponseEntity.status(ResponseUtil.SUCCESS).body(isLocked);
-  }
-
-  @PostMapping("/deduct/id/{id}")
-  public ResponseEntity<Boolean> deductPromotionStock(@PathVariable("id") String id) {
-    PromotionDomain promotionDomain = promotionService.getPromotionById(id);
-    if (Objects.isNull(promotionDomain)) {
-      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(false);
-    }
-    boolean isLocked = promotionService.deductStock(id);
-    return ResponseEntity.status(ResponseUtil.SUCCESS).body(isLocked);
-  }
-
-  @PostMapping("/revert/id/{id}")
-  public ResponseEntity<Boolean> revertPromotionStock(@PathVariable("id") String id) {
-    PromotionDomain promotionDomain = promotionService.getPromotionById(id);
-    if (Objects.isNull(promotionDomain)) {
-      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(false);
-    }
-    boolean isLocked = promotionService.revertStock(id);
-    return ResponseEntity.status(ResponseUtil.SUCCESS).body(isLocked);
   }
 }

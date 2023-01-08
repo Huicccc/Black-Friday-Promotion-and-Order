@@ -7,7 +7,6 @@ package org.ecommerce.infrastructure.jooq.tables;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-
 import org.ecommerce.infrastructure.jooq.Ecom;
 import org.ecommerce.infrastructure.jooq.Indexes;
 import org.ecommerce.infrastructure.jooq.Keys;
