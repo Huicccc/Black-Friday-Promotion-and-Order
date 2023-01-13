@@ -176,56 +176,7 @@ POST: “/order/buynow”;
 
 
 
-
-## **4. boolean lockPromotionStock**
-#### **Path**
-POST: “/promotion/lock/id/{id}”;
-#### **Parameters**
-
-|**Name**|**Required**|**Description**|
-| :-: | :-: | :-: |
-|promotionId|true| |
-|promotionName|true| |
-|orderAmount|true| |
-|userId|true| |
-
-#### **Request body**
-```javascript
-{
-    "promotionId" : "802d4bf6-532f-48de-88e8-65b4d9a58ee2",
-    "promotionName": "Iphone 13 Free",
-    "userId": "052889e6-0920-4919-a870-b098d27b6a04",
-    "orderAmount" : 99
-}
-
-
-```
-
-#### **Responses**
-```javascript
-200
-{
-    "orderNumber": "xxxxx",
-    "orderStatus": -1/0/1,
-    "promotionId" : "802d4bf6-532f-48de-88e8-65b4d9a58ee2",
-    "promotionName": "Iphone 13 Free",
-    "userId": "052889e6-0920-4919-a870-b098d27b6a04",
-    "orderAmount" : 99,
-    "createTime": "2022-11-14T13:56:01",
-    "payTime": null
-}
-
-
-```
-
-#### **Postman Tests**
-
-
-
-
-
-
-## **5. orderStatusInDto payBuyNowOrder orderOutDto**
+## **4. orderStatusInDto payBuyNowOrder orderOutDto**
 #### **Path**
 Patch: “order/pay”;
 #### **Parameters**
