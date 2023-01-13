@@ -9,7 +9,7 @@ public enum OrderStatus {
   CREATED(1),
   PAYED(2),
   OVERTIME(3),
-  ;
+  ITEM_ERROR(-2);
 
   public Integer code;
 
@@ -19,6 +19,7 @@ public enum OrderStatus {
 
   public static final Map<Integer, OrderStatus> cachedStatus = new HashMap<Integer, OrderStatus>() {
     {
+      put(-2, ITEM_ERROR);
       put(-1, OUT_OF_STOCK);
       put(0, READY);
       put(1, CREATED);

@@ -1,6 +1,5 @@
 package org.ecommerce.application.promotion.util;
 
-import java.util.UUID;
 import org.ecommerce.domain.promotion.PromotionDomain;
 import org.ecommerce.domain.promotionCache.PromotionCacheDomain;
 
@@ -24,7 +23,7 @@ public class PromotionCacheDomainMapping {
 
   public static PromotionDomain cacheToDomain(PromotionCacheDomain promotionCacheDomain) {
     return PromotionDomain.builder()
-        .promotionId(UUID.randomUUID().toString())
+        .promotionId(promotionCacheDomain.getPromotionId())
         .promotionName(promotionCacheDomain.getPromotionName())
         .commodityId(promotionCacheDomain.getCommodityId())
         .startTime(promotionCacheDomain.getStartTime())

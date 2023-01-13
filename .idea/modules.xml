@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Black-Friday-Promotion-and-Order.iml" filepath="$PROJECT_DIR$/.idea/Black-Friday-Promotion-and-Order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/black-friday/black-friday.iml" filepath="$PROJECT_DIR$/black-friday/black-friday.iml" />
+    </modules>
+  </component>
+</project>

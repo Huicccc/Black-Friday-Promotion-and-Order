@@ -2,6 +2,7 @@ package org.ecommerce.api;
 
 import java.util.Objects;
 import org.ecommerce.api.dto.in.OrderInDto;
+import org.ecommerce.api.dto.in.OrderStatusInDto;
 import org.ecommerce.api.dto.out.OrderOutDto;
 import org.ecommerce.api.util.ResponseUtil;
 import org.ecommerce.api.util.SnowFlake;
@@ -12,6 +13,7 @@ import org.ecommerce.domain.order.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,6 +43,47 @@ public class OrderController {
     }
 
     return ResponseEntity.status(ResponseUtil.INTERNAL_ERROR).body(toOrderOutDto(createdOrder));
+  }
+
+  @PatchMapping("pay")
+  public ResponseEntity<OrderOutDto> payBuyNowOrder(
+      @RequestBody OrderStatusInDto orderStatusInDto) {
+    // check exists status
+    if (!(OrderStatus.CREATED.code.equals(orderStatusInDto.existStatus)
+        && OrderStatus.PAYED.code.equals(orderStatusInDto.expectStatus))) {
+      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(null);
+    }
+    // pay order: null, created, just paid/already paid, overtime
+    OrderDomain updatedOrderDomain = orderServiceApplication.payBuyNowOrder(
+        orderStatusInDto.getOrderNumber());
+    if (Objects.isNull(updatedOrderDomain)) {
+      return ResponseEntity.status(ResponseUtil.BAD_REQUEST).body(toOrderOutDto(null));
+    } else if (updatedOrderDomain.getOrderStatus().equals(OrderStatus.PAYED)) {
+      return ResponseEntity.status(ResponseUtil.SUCCESS).body(toOrderOutDto(updatedOrderDomain));
+    } else if (updatedOrderDomain.getOrderStatus().equals(OrderStatus.CREATED)) {
+      return ResponseEntity.status(ResponseUtil.INTERNAL_ERROR)
+          .body(toOrderOutDto(updatedOrderDomain));
+    } else if (updatedOrderDomain.getOrderStatus().equals(OrderStatus.OVERTIME)) {
+      return ResponseEntity.status(ResponseUtil.SUCCESS).body(toOrderOutDto(updatedOrderDomain));
+    } else {
+      return ResponseEntity.status(ResponseUtil.INTERNAL_ERROR)
+          .body(toOrderOutDto(updatedOrderDomain));
+    }
+  }
+
+  @PostMapping("/buynow")
+  public ResponseEntity createBuyNowOrder(@RequestBody OrderInDto orderInDto) {
+    OrderDomain createdOrder = orderServiceApplication.createBuyNowOrder(toDomain(orderInDto));
+
+    // order status will be Ready or Created, MQ synchronization handle createOrder status later
+    if (!createdOrder.getOrderStatus().equals(OrderStatus.OUT_OF_STOCK)) {
+      return ResponseEntity.status(ResponseUtil.SUCCESS).body(toOrderOutDto(createdOrder));
+    }
+
+    return ResponseEntity.status(ResponseUtil.INTERNAL_ERROR).body(toOrderOutDto(createdOrder));
+
+//    Jmeter testing
+//    return ResponseEntity.status(ResponseUtil.SUCCESS).body(toOrderOutDto(createdOrder));
   }
 
   private OrderDomain toDomain(OrderInDto orderInDto) {

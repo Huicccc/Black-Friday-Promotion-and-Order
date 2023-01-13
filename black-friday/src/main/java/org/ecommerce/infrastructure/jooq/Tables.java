@@ -7,6 +7,7 @@ package org.ecommerce.infrastructure.jooq;
 import org.ecommerce.infrastructure.jooq.tables.Commodity;
 import org.ecommerce.infrastructure.jooq.tables.Orders;
 import org.ecommerce.infrastructure.jooq.tables.Promotion;
+import org.ecommerce.infrastructure.jooq.tables.PromotionLog;
 import org.ecommerce.infrastructure.jooq.tables.User;
 
 
@@ -30,6 +31,11 @@ public class Tables {
      * The table <code>ecom.promotion</code>.
      */
     public static final Promotion PROMOTION = Promotion.PROMOTION;
+
+    /**
+     * The table <code>ecom.promotion_log</code>.
+     */
+    public static final PromotionLog PROMOTION_LOG = PromotionLog.PROMOTION_LOG;
 
     /**
      * The table <code>ecom.user</code>.

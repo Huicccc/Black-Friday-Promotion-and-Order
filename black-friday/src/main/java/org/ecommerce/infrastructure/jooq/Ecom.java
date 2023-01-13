@@ -9,6 +9,7 @@ import java.util.List;
 import org.ecommerce.infrastructure.jooq.tables.Commodity;
 import org.ecommerce.infrastructure.jooq.tables.Orders;
 import org.ecommerce.infrastructure.jooq.tables.Promotion;
+import org.ecommerce.infrastructure.jooq.tables.PromotionLog;
 import org.ecommerce.infrastructure.jooq.tables.User;
 import org.jooq.Catalog;
 import org.jooq.Table;
@@ -44,6 +45,11 @@ public class Ecom extends SchemaImpl {
     public final Promotion PROMOTION = Promotion.PROMOTION;
 
     /**
+     * The table <code>ecom.promotion_log</code>.
+     */
+    public final PromotionLog PROMOTION_LOG = PromotionLog.PROMOTION_LOG;
+
+    /**
      * The table <code>ecom.user</code>.
      */
     public final User USER = User.USER;
@@ -67,6 +73,7 @@ public class Ecom extends SchemaImpl {
             Commodity.COMMODITY,
             Orders.ORDERS,
             Promotion.PROMOTION,
+            PromotionLog.PROMOTION_LOG,
             User.USER);
     }
 }
