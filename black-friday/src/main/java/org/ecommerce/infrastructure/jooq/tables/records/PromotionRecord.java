@@ -5,6 +5,7 @@ package org.ecommerce.infrastructure.jooq.tables.records;
 
 
 import java.time.LocalDateTime;
+
 import org.ecommerce.infrastructure.jooq.tables.Promotion;
 import org.jooq.Field;
 import org.jooq.Record1;
@@ -22,168 +23,168 @@ public class PromotionRecord extends UpdatableRecordImpl<PromotionRecord> implem
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>ecom.promotion.promotion_id</code>.
+     * Setter for <code>blackfriday.promotion.promotion_id</code>.
      */
     public void setPromotionId(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.promotion_id</code>.
+     * Getter for <code>blackfriday.promotion.promotion_id</code>.
      */
     public String getPromotionId() {
         return (String) get(0);
     }
 
     /**
-     * Setter for <code>ecom.promotion.promotion_name</code>.
+     * Setter for <code>blackfriday.promotion.promotion_name</code>.
      */
     public void setPromotionName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.promotion_name</code>.
+     * Getter for <code>blackfriday.promotion.promotion_name</code>.
      */
     public String getPromotionName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>ecom.promotion.commodity_id</code>.
+     * Setter for <code>blackfriday.promotion.commodity_id</code>.
      */
     public void setCommodityId(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.commodity_id</code>.
+     * Getter for <code>blackfriday.promotion.commodity_id</code>.
      */
     public String getCommodityId() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>ecom.promotion.original_price</code>.
+     * Setter for <code>blackfriday.promotion.original_price</code>.
      */
     public void setOriginalPrice(Integer value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.original_price</code>.
+     * Getter for <code>blackfriday.promotion.original_price</code>.
      */
     public Integer getOriginalPrice() {
         return (Integer) get(3);
     }
 
     /**
-     * Setter for <code>ecom.promotion.promotion_price</code>.
+     * Setter for <code>blackfriday.promotion.promotion_price</code>.
      */
     public void setPromotionPrice(Integer value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.promotion_price</code>.
+     * Getter for <code>blackfriday.promotion.promotion_price</code>.
      */
     public Integer getPromotionPrice() {
         return (Integer) get(4);
     }
 
     /**
-     * Setter for <code>ecom.promotion.start_time</code>.
+     * Setter for <code>blackfriday.promotion.start_time</code>.
      */
     public void setStartTime(LocalDateTime value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.start_time</code>.
+     * Getter for <code>blackfriday.promotion.start_time</code>.
      */
     public LocalDateTime getStartTime() {
         return (LocalDateTime) get(5);
     }
 
     /**
-     * Setter for <code>ecom.promotion.end_time</code>.
+     * Setter for <code>blackfriday.promotion.end_time</code>.
      */
     public void setEndTime(LocalDateTime value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.end_time</code>.
+     * Getter for <code>blackfriday.promotion.end_time</code>.
      */
     public LocalDateTime getEndTime() {
         return (LocalDateTime) get(6);
     }
 
     /**
-     * Setter for <code>ecom.promotion.status</code>.
+     * Setter for <code>blackfriday.promotion.status</code>.
      */
     public void setStatus(Integer value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.status</code>.
+     * Getter for <code>blackfriday.promotion.status</code>.
      */
     public Integer getStatus() {
         return (Integer) get(7);
     }
 
     /**
-     * Setter for <code>ecom.promotion.total_stock</code>.
+     * Setter for <code>blackfriday.promotion.total_stock</code>.
      */
     public void setTotalStock(Long value) {
         set(8, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.total_stock</code>.
+     * Getter for <code>blackfriday.promotion.total_stock</code>.
      */
     public Long getTotalStock() {
         return (Long) get(8);
     }
 
     /**
-     * Setter for <code>ecom.promotion.available_stock</code>.
+     * Setter for <code>blackfriday.promotion.available_stock</code>.
      */
     public void setAvailableStock(Long value) {
         set(9, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.available_stock</code>.
+     * Getter for <code>blackfriday.promotion.available_stock</code>.
      */
     public Long getAvailableStock() {
         return (Long) get(9);
     }
 
     /**
-     * Setter for <code>ecom.promotion.lock_stock</code>.
+     * Setter for <code>blackfriday.promotion.lock_stock</code>.
      */
     public void setLockStock(Long value) {
         set(10, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.lock_stock</code>.
+     * Getter for <code>blackfriday.promotion.lock_stock</code>.
      */
     public Long getLockStock() {
         return (Long) get(10);
     }
 
     /**
-     * Setter for <code>ecom.promotion.image_url</code>.
+     * Setter for <code>blackfriday.promotion.image_url</code>.
      */
     public void setImageUrl(String value) {
         set(11, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion.image_url</code>.
+     * Getter for <code>blackfriday.promotion.image_url</code>.
      */
     public String getImageUrl() {
         return (String) get(11);

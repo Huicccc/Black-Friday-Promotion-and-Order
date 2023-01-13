@@ -6,7 +6,8 @@ package org.ecommerce.infrastructure.jooq.tables;
 
 import java.util.Arrays;
 import java.util.List;
-import org.ecommerce.infrastructure.jooq.Ecom;
+
+import org.ecommerce.infrastructure.jooq.Blackfriday;
 import org.ecommerce.infrastructure.jooq.Keys;
 import org.ecommerce.infrastructure.jooq.tables.records.UserRecord;
 import org.jooq.Field;
@@ -33,7 +34,7 @@ public class User extends TableImpl<UserRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>ecom.user</code>
+     * The reference instance of <code>blackfriday.user</code>
      */
     public static final User USER = new User();
 
@@ -46,17 +47,17 @@ public class User extends TableImpl<UserRecord> {
     }
 
     /**
-     * The column <code>ecom.user.user_id</code>.
+     * The column <code>blackfriday.user.user_id</code>.
      */
     public final TableField<UserRecord, String> USER_ID = createField(DSL.name("user_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.user.user_name</code>.
+     * The column <code>blackfriday.user.user_name</code>.
      */
     public final TableField<UserRecord, String> USER_NAME = createField(DSL.name("user_name"), SQLDataType.VARCHAR(100).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.user.password</code>.
+     * The column <code>blackfriday.user.password</code>.
      */
     public final TableField<UserRecord, String> PASSWORD = createField(DSL.name("password"), SQLDataType.VARCHAR(100).nullable(false), this, "");
 
@@ -69,21 +70,21 @@ public class User extends TableImpl<UserRecord> {
     }
 
     /**
-     * Create an aliased <code>ecom.user</code> table reference
+     * Create an aliased <code>blackfriday.user</code> table reference
      */
     public User(String alias) {
         this(DSL.name(alias), USER);
     }
 
     /**
-     * Create an aliased <code>ecom.user</code> table reference
+     * Create an aliased <code>blackfriday.user</code> table reference
      */
     public User(Name alias) {
         this(alias, USER);
     }
 
     /**
-     * Create a <code>ecom.user</code> table reference
+     * Create a <code>blackfriday.user</code> table reference
      */
     public User() {
         this(DSL.name("user"), null);
@@ -95,7 +96,7 @@ public class User extends TableImpl<UserRecord> {
 
     @Override
     public Schema getSchema() {
-        return Ecom.ECOM;
+        return Blackfriday.BLACKFRIDAY;
     }
 
     @Override

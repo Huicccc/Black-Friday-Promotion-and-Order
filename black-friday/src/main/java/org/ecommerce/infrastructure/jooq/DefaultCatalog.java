@@ -6,6 +6,7 @@ package org.ecommerce.infrastructure.jooq;
 
 import java.util.Arrays;
 import java.util.List;
+
 import org.jooq.Schema;
 import org.jooq.impl.CatalogImpl;
 
@@ -24,9 +25,9 @@ public class DefaultCatalog extends CatalogImpl {
     public static final DefaultCatalog DEFAULT_CATALOG = new DefaultCatalog();
 
     /**
-     * The schema <code>ecom</code>.
+     * The schema <code>blackfriday</code>.
      */
-    public final Ecom ECOM = Ecom.ECOM;
+    public final Blackfriday BLACKFRIDAY = Blackfriday.BLACKFRIDAY;
 
     /**
      * No further instances allowed
@@ -38,6 +39,6 @@ public class DefaultCatalog extends CatalogImpl {
     @Override
     public final List<Schema> getSchemas() {
         return Arrays.<Schema>asList(
-            Ecom.ECOM);
+            Blackfriday.BLACKFRIDAY);
     }
 }

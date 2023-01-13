@@ -150,7 +150,7 @@
               <!-- excludes tables | for seperator-->
               <excludes>flyway_schema_history</excludes>
               <!--database name-->
-              <inputSchema>ecom</inputSchema>
+              <inputSchema>blackfriday</inputSchema>
             </database>
 
             <generate>

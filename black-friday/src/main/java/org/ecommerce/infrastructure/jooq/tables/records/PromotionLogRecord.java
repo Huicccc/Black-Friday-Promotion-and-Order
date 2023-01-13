@@ -5,6 +5,7 @@ package org.ecommerce.infrastructure.jooq.tables.records;
 
 
 import java.time.LocalDateTime;
+
 import org.ecommerce.infrastructure.jooq.tables.PromotionLog;
 import org.jooq.Field;
 import org.jooq.Record2;
@@ -22,70 +23,70 @@ public class PromotionLogRecord extends UpdatableRecordImpl<PromotionLogRecord> 
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>ecom.promotion_log.order_number</code>.
+     * Setter for <code>blackfriday.promotion_log.order_number</code>.
      */
     public void setOrderNumber(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion_log.order_number</code>.
+     * Getter for <code>blackfriday.promotion_log.order_number</code>.
      */
     public Long getOrderNumber() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>ecom.promotion_log.user_id</code>.
+     * Setter for <code>blackfriday.promotion_log.user_id</code>.
      */
     public void setUserId(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion_log.user_id</code>.
+     * Getter for <code>blackfriday.promotion_log.user_id</code>.
      */
     public String getUserId() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>ecom.promotion_log.promotion_id</code>.
+     * Setter for <code>blackfriday.promotion_log.promotion_id</code>.
      */
     public void setPromotionId(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion_log.promotion_id</code>.
+     * Getter for <code>blackfriday.promotion_log.promotion_id</code>.
      */
     public String getPromotionId() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>ecom.promotion_log.operation_name</code>.
+     * Setter for <code>blackfriday.promotion_log.operation_name</code>.
      */
     public void setOperationName(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion_log.operation_name</code>.
+     * Getter for <code>blackfriday.promotion_log.operation_name</code>.
      */
     public String getOperationName() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>ecom.promotion_log.create_time</code>.
+     * Setter for <code>blackfriday.promotion_log.create_time</code>.
      */
     public void setCreateTime(LocalDateTime value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>ecom.promotion_log.create_time</code>.
+     * Getter for <code>blackfriday.promotion_log.create_time</code>.
      */
     public LocalDateTime getCreateTime() {
         return (LocalDateTime) get(4);

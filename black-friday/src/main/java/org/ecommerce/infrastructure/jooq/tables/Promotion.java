@@ -7,7 +7,8 @@ package org.ecommerce.infrastructure.jooq.tables;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import org.ecommerce.infrastructure.jooq.Ecom;
+
+import org.ecommerce.infrastructure.jooq.Blackfriday;
 import org.ecommerce.infrastructure.jooq.Indexes;
 import org.ecommerce.infrastructure.jooq.Keys;
 import org.ecommerce.infrastructure.jooq.tables.records.PromotionRecord;
@@ -36,7 +37,7 @@ public class Promotion extends TableImpl<PromotionRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>ecom.promotion</code>
+     * The reference instance of <code>blackfriday.promotion</code>
      */
     public static final Promotion PROMOTION = new Promotion();
 
@@ -49,62 +50,62 @@ public class Promotion extends TableImpl<PromotionRecord> {
     }
 
     /**
-     * The column <code>ecom.promotion.promotion_id</code>.
+     * The column <code>blackfriday.promotion.promotion_id</code>.
      */
     public final TableField<PromotionRecord, String> PROMOTION_ID = createField(DSL.name("promotion_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.promotion_name</code>.
+     * The column <code>blackfriday.promotion.promotion_name</code>.
      */
     public final TableField<PromotionRecord, String> PROMOTION_NAME = createField(DSL.name("promotion_name"), SQLDataType.VARCHAR(128).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.commodity_id</code>.
+     * The column <code>blackfriday.promotion.commodity_id</code>.
      */
     public final TableField<PromotionRecord, String> COMMODITY_ID = createField(DSL.name("commodity_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.original_price</code>.
+     * The column <code>blackfriday.promotion.original_price</code>.
      */
     public final TableField<PromotionRecord, Integer> ORIGINAL_PRICE = createField(DSL.name("original_price"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.promotion_price</code>.
+     * The column <code>blackfriday.promotion.promotion_price</code>.
      */
     public final TableField<PromotionRecord, Integer> PROMOTION_PRICE = createField(DSL.name("promotion_price"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.start_time</code>.
+     * The column <code>blackfriday.promotion.start_time</code>.
      */
     public final TableField<PromotionRecord, LocalDateTime> START_TIME = createField(DSL.name("start_time"), SQLDataType.LOCALDATETIME(0).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.end_time</code>.
+     * The column <code>blackfriday.promotion.end_time</code>.
      */
     public final TableField<PromotionRecord, LocalDateTime> END_TIME = createField(DSL.name("end_time"), SQLDataType.LOCALDATETIME(0).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.status</code>.
+     * The column <code>blackfriday.promotion.status</code>.
      */
     public final TableField<PromotionRecord, Integer> STATUS = createField(DSL.name("status"), SQLDataType.INTEGER, this, "");
 
     /**
-     * The column <code>ecom.promotion.total_stock</code>.
+     * The column <code>blackfriday.promotion.total_stock</code>.
      */
     public final TableField<PromotionRecord, Long> TOTAL_STOCK = createField(DSL.name("total_stock"), SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.available_stock</code>.
+     * The column <code>blackfriday.promotion.available_stock</code>.
      */
     public final TableField<PromotionRecord, Long> AVAILABLE_STOCK = createField(DSL.name("available_stock"), SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.lock_stock</code>.
+     * The column <code>blackfriday.promotion.lock_stock</code>.
      */
     public final TableField<PromotionRecord, Long> LOCK_STOCK = createField(DSL.name("lock_stock"), SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion.image_url</code>.
+     * The column <code>blackfriday.promotion.image_url</code>.
      */
     public final TableField<PromotionRecord, String> IMAGE_URL = createField(DSL.name("image_url"), SQLDataType.VARCHAR(64).nullable(false), this, "");
 
@@ -117,21 +118,21 @@ public class Promotion extends TableImpl<PromotionRecord> {
     }
 
     /**
-     * Create an aliased <code>ecom.promotion</code> table reference
+     * Create an aliased <code>blackfriday.promotion</code> table reference
      */
     public Promotion(String alias) {
         this(DSL.name(alias), PROMOTION);
     }
 
     /**
-     * Create an aliased <code>ecom.promotion</code> table reference
+     * Create an aliased <code>blackfriday.promotion</code> table reference
      */
     public Promotion(Name alias) {
         this(alias, PROMOTION);
     }
 
     /**
-     * Create a <code>ecom.promotion</code> table reference
+     * Create a <code>blackfriday.promotion</code> table reference
      */
     public Promotion() {
         this(DSL.name("promotion"), null);
@@ -143,7 +144,7 @@ public class Promotion extends TableImpl<PromotionRecord> {
 
     @Override
     public Schema getSchema() {
-        return Ecom.ECOM;
+        return Blackfriday.BLACKFRIDAY;
     }
 
     @Override

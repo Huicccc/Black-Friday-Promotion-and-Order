@@ -7,7 +7,8 @@ package org.ecommerce.infrastructure.jooq.tables;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import org.ecommerce.infrastructure.jooq.Ecom;
+
+import org.ecommerce.infrastructure.jooq.Blackfriday;
 import org.ecommerce.infrastructure.jooq.Indexes;
 import org.ecommerce.infrastructure.jooq.Keys;
 import org.ecommerce.infrastructure.jooq.tables.records.OrdersRecord;
@@ -36,7 +37,7 @@ public class Orders extends TableImpl<OrdersRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>ecom.orders</code>
+     * The reference instance of <code>blackfriday.orders</code>
      */
     public static final Orders ORDERS = new Orders();
 
@@ -49,42 +50,42 @@ public class Orders extends TableImpl<OrdersRecord> {
     }
 
     /**
-     * The column <code>ecom.orders.order_number</code>.
+     * The column <code>blackfriday.orders.order_number</code>.
      */
     public final TableField<OrdersRecord, Long> ORDER_NUMBER = createField(DSL.name("order_number"), SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.order_status</code>.
+     * The column <code>blackfriday.orders.order_status</code>.
      */
     public final TableField<OrdersRecord, Integer> ORDER_STATUS = createField(DSL.name("order_status"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.promotion_id</code>.
+     * The column <code>blackfriday.orders.promotion_id</code>.
      */
     public final TableField<OrdersRecord, String> PROMOTION_ID = createField(DSL.name("promotion_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.promotion_name</code>.
+     * The column <code>blackfriday.orders.promotion_name</code>.
      */
     public final TableField<OrdersRecord, String> PROMOTION_NAME = createField(DSL.name("promotion_name"), SQLDataType.VARCHAR(128).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.user_id</code>.
+     * The column <code>blackfriday.orders.user_id</code>.
      */
     public final TableField<OrdersRecord, String> USER_ID = createField(DSL.name("user_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.order_amount</code>.
+     * The column <code>blackfriday.orders.order_amount</code>.
      */
     public final TableField<OrdersRecord, Integer> ORDER_AMOUNT = createField(DSL.name("order_amount"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.create_time</code>.
+     * The column <code>blackfriday.orders.create_time</code>.
      */
     public final TableField<OrdersRecord, LocalDateTime> CREATE_TIME = createField(DSL.name("create_time"), SQLDataType.LOCALDATETIME(0).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.orders.pay_time</code>.
+     * The column <code>blackfriday.orders.pay_time</code>.
      */
     public final TableField<OrdersRecord, LocalDateTime> PAY_TIME = createField(DSL.name("pay_time"), SQLDataType.LOCALDATETIME(0), this, "");
 
@@ -97,21 +98,21 @@ public class Orders extends TableImpl<OrdersRecord> {
     }
 
     /**
-     * Create an aliased <code>ecom.orders</code> table reference
+     * Create an aliased <code>blackfriday.orders</code> table reference
      */
     public Orders(String alias) {
         this(DSL.name(alias), ORDERS);
     }
 
     /**
-     * Create an aliased <code>ecom.orders</code> table reference
+     * Create an aliased <code>blackfriday.orders</code> table reference
      */
     public Orders(Name alias) {
         this(alias, ORDERS);
     }
 
     /**
-     * Create a <code>ecom.orders</code> table reference
+     * Create a <code>blackfriday.orders</code> table reference
      */
     public Orders() {
         this(DSL.name("orders"), null);
@@ -123,7 +124,7 @@ public class Orders extends TableImpl<OrdersRecord> {
 
     @Override
     public Schema getSchema() {
-        return Ecom.ECOM;
+        return Blackfriday.BLACKFRIDAY;
     }
 
     @Override

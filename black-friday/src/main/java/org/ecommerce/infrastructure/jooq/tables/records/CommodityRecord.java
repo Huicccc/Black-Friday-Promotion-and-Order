@@ -21,70 +21,70 @@ public class CommodityRecord extends UpdatableRecordImpl<CommodityRecord> implem
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>ecom.commodity.commodity_id</code>.
+     * Setter for <code>blackfriday.commodity.commodity_id</code>.
      */
     public void setCommodityId(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>ecom.commodity.commodity_id</code>.
+     * Getter for <code>blackfriday.commodity.commodity_id</code>.
      */
     public String getCommodityId() {
         return (String) get(0);
     }
 
     /**
-     * Setter for <code>ecom.commodity.commodity_name</code>.
+     * Setter for <code>blackfriday.commodity.commodity_name</code>.
      */
     public void setCommodityName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>ecom.commodity.commodity_name</code>.
+     * Getter for <code>blackfriday.commodity.commodity_name</code>.
      */
     public String getCommodityName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>ecom.commodity.description</code>.
+     * Setter for <code>blackfriday.commodity.description</code>.
      */
     public void setDescription(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>ecom.commodity.description</code>.
+     * Getter for <code>blackfriday.commodity.description</code>.
      */
     public String getDescription() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>ecom.commodity.price</code>.
+     * Setter for <code>blackfriday.commodity.price</code>.
      */
     public void setPrice(Integer value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>ecom.commodity.price</code>.
+     * Getter for <code>blackfriday.commodity.price</code>.
      */
     public Integer getPrice() {
         return (Integer) get(3);
     }
 
     /**
-     * Setter for <code>ecom.commodity.image_url</code>.
+     * Setter for <code>blackfriday.commodity.image_url</code>.
      */
     public void setImageUrl(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>ecom.commodity.image_url</code>.
+     * Getter for <code>blackfriday.commodity.image_url</code>.
      */
     public String getImageUrl() {
         return (String) get(4);

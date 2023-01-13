@@ -5,6 +5,7 @@ package org.ecommerce.infrastructure.jooq.tables.records;
 
 
 import java.time.LocalDateTime;
+
 import org.ecommerce.infrastructure.jooq.tables.Orders;
 import org.jooq.Field;
 import org.jooq.Record1;
@@ -22,112 +23,112 @@ public class OrdersRecord extends UpdatableRecordImpl<OrdersRecord> implements R
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>ecom.orders.order_number</code>.
+     * Setter for <code>blackfriday.orders.order_number</code>.
      */
     public void setOrderNumber(Long value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.order_number</code>.
+     * Getter for <code>blackfriday.orders.order_number</code>.
      */
     public Long getOrderNumber() {
         return (Long) get(0);
     }
 
     /**
-     * Setter for <code>ecom.orders.order_status</code>.
+     * Setter for <code>blackfriday.orders.order_status</code>.
      */
     public void setOrderStatus(Integer value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.order_status</code>.
+     * Getter for <code>blackfriday.orders.order_status</code>.
      */
     public Integer getOrderStatus() {
         return (Integer) get(1);
     }
 
     /**
-     * Setter for <code>ecom.orders.promotion_id</code>.
+     * Setter for <code>blackfriday.orders.promotion_id</code>.
      */
     public void setPromotionId(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.promotion_id</code>.
+     * Getter for <code>blackfriday.orders.promotion_id</code>.
      */
     public String getPromotionId() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>ecom.orders.promotion_name</code>.
+     * Setter for <code>blackfriday.orders.promotion_name</code>.
      */
     public void setPromotionName(String value) {
         set(3, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.promotion_name</code>.
+     * Getter for <code>blackfriday.orders.promotion_name</code>.
      */
     public String getPromotionName() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>ecom.orders.user_id</code>.
+     * Setter for <code>blackfriday.orders.user_id</code>.
      */
     public void setUserId(String value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.user_id</code>.
+     * Getter for <code>blackfriday.orders.user_id</code>.
      */
     public String getUserId() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>ecom.orders.order_amount</code>.
+     * Setter for <code>blackfriday.orders.order_amount</code>.
      */
     public void setOrderAmount(Integer value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.order_amount</code>.
+     * Getter for <code>blackfriday.orders.order_amount</code>.
      */
     public Integer getOrderAmount() {
         return (Integer) get(5);
     }
 
     /**
-     * Setter for <code>ecom.orders.create_time</code>.
+     * Setter for <code>blackfriday.orders.create_time</code>.
      */
     public void setCreateTime(LocalDateTime value) {
         set(6, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.create_time</code>.
+     * Getter for <code>blackfriday.orders.create_time</code>.
      */
     public LocalDateTime getCreateTime() {
         return (LocalDateTime) get(6);
     }
 
     /**
-     * Setter for <code>ecom.orders.pay_time</code>.
+     * Setter for <code>blackfriday.orders.pay_time</code>.
      */
     public void setPayTime(LocalDateTime value) {
         set(7, value);
     }
 
     /**
-     * Getter for <code>ecom.orders.pay_time</code>.
+     * Getter for <code>blackfriday.orders.pay_time</code>.
      */
     public LocalDateTime getPayTime() {
         return (LocalDateTime) get(7);

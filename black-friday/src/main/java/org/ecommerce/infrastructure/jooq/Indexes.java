@@ -15,7 +15,7 @@ import org.jooq.impl.Internal;
 
 
 /**
- * A class modelling indexes of tables in ecom.
+ * A class modelling indexes of tables in blackfriday.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Indexes {

@@ -21,42 +21,42 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>ecom.user.user_id</code>.
+     * Setter for <code>blackfriday.user.user_id</code>.
      */
     public void setUserId(String value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>ecom.user.user_id</code>.
+     * Getter for <code>blackfriday.user.user_id</code>.
      */
     public String getUserId() {
         return (String) get(0);
     }
 
     /**
-     * Setter for <code>ecom.user.user_name</code>.
+     * Setter for <code>blackfriday.user.user_name</code>.
      */
     public void setUserName(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>ecom.user.user_name</code>.
+     * Getter for <code>blackfriday.user.user_name</code>.
      */
     public String getUserName() {
         return (String) get(1);
     }
 
     /**
-     * Setter for <code>ecom.user.password</code>.
+     * Setter for <code>blackfriday.user.password</code>.
      */
     public void setPassword(String value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>ecom.user.password</code>.
+     * Getter for <code>blackfriday.user.password</code>.
      */
     public String getPassword() {
         return (String) get(2);

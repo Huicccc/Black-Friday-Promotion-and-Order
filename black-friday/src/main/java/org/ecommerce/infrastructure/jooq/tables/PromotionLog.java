@@ -7,7 +7,8 @@ package org.ecommerce.infrastructure.jooq.tables;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import org.ecommerce.infrastructure.jooq.Ecom;
+
+import org.ecommerce.infrastructure.jooq.Blackfriday;
 import org.ecommerce.infrastructure.jooq.Indexes;
 import org.ecommerce.infrastructure.jooq.Keys;
 import org.ecommerce.infrastructure.jooq.tables.records.PromotionLogRecord;
@@ -36,7 +37,7 @@ public class PromotionLog extends TableImpl<PromotionLogRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>ecom.promotion_log</code>
+     * The reference instance of <code>blackfriday.promotion_log</code>
      */
     public static final PromotionLog PROMOTION_LOG = new PromotionLog();
 
@@ -49,27 +50,27 @@ public class PromotionLog extends TableImpl<PromotionLogRecord> {
     }
 
     /**
-     * The column <code>ecom.promotion_log.order_number</code>.
+     * The column <code>blackfriday.promotion_log.order_number</code>.
      */
     public final TableField<PromotionLogRecord, Long> ORDER_NUMBER = createField(DSL.name("order_number"), SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion_log.user_id</code>.
+     * The column <code>blackfriday.promotion_log.user_id</code>.
      */
     public final TableField<PromotionLogRecord, String> USER_ID = createField(DSL.name("user_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion_log.promotion_id</code>.
+     * The column <code>blackfriday.promotion_log.promotion_id</code>.
      */
     public final TableField<PromotionLogRecord, String> PROMOTION_ID = createField(DSL.name("promotion_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion_log.operation_name</code>.
+     * The column <code>blackfriday.promotion_log.operation_name</code>.
      */
     public final TableField<PromotionLogRecord, String> OPERATION_NAME = createField(DSL.name("operation_name"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.promotion_log.create_time</code>.
+     * The column <code>blackfriday.promotion_log.create_time</code>.
      */
     public final TableField<PromotionLogRecord, LocalDateTime> CREATE_TIME = createField(DSL.name("create_time"), SQLDataType.LOCALDATETIME(0).nullable(false), this, "");
 
@@ -82,21 +83,21 @@ public class PromotionLog extends TableImpl<PromotionLogRecord> {
     }
 
     /**
-     * Create an aliased <code>ecom.promotion_log</code> table reference
+     * Create an aliased <code>blackfriday.promotion_log</code> table reference
      */
     public PromotionLog(String alias) {
         this(DSL.name(alias), PROMOTION_LOG);
     }
 
     /**
-     * Create an aliased <code>ecom.promotion_log</code> table reference
+     * Create an aliased <code>blackfriday.promotion_log</code> table reference
      */
     public PromotionLog(Name alias) {
         this(alias, PROMOTION_LOG);
     }
 
     /**
-     * Create a <code>ecom.promotion_log</code> table reference
+     * Create a <code>blackfriday.promotion_log</code> table reference
      */
     public PromotionLog() {
         this(DSL.name("promotion_log"), null);
@@ -108,7 +109,7 @@ public class PromotionLog extends TableImpl<PromotionLogRecord> {
 
     @Override
     public Schema getSchema() {
-        return Ecom.ECOM;
+        return Blackfriday.BLACKFRIDAY;
     }
 
     @Override

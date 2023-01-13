@@ -6,7 +6,8 @@ package org.ecommerce.infrastructure.jooq.tables;
 
 import java.util.Arrays;
 import java.util.List;
-import org.ecommerce.infrastructure.jooq.Ecom;
+
+import org.ecommerce.infrastructure.jooq.Blackfriday;
 import org.ecommerce.infrastructure.jooq.Indexes;
 import org.ecommerce.infrastructure.jooq.Keys;
 import org.ecommerce.infrastructure.jooq.tables.records.CommodityRecord;
@@ -35,7 +36,7 @@ public class Commodity extends TableImpl<CommodityRecord> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>ecom.commodity</code>
+     * The reference instance of <code>blackfriday.commodity</code>
      */
     public static final Commodity COMMODITY = new Commodity();
 
@@ -48,27 +49,27 @@ public class Commodity extends TableImpl<CommodityRecord> {
     }
 
     /**
-     * The column <code>ecom.commodity.commodity_id</code>.
+     * The column <code>blackfriday.commodity.commodity_id</code>.
      */
     public final TableField<CommodityRecord, String> COMMODITY_ID = createField(DSL.name("commodity_id"), SQLDataType.VARCHAR(36).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.commodity.commodity_name</code>.
+     * The column <code>blackfriday.commodity.commodity_name</code>.
      */
     public final TableField<CommodityRecord, String> COMMODITY_NAME = createField(DSL.name("commodity_name"), SQLDataType.VARCHAR(64).nullable(false), this, "");
 
     /**
-     * The column <code>ecom.commodity.description</code>.
+     * The column <code>blackfriday.commodity.description</code>.
      */
     public final TableField<CommodityRecord, String> DESCRIPTION = createField(DSL.name("description"), SQLDataType.CLOB.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.commodity.price</code>.
+     * The column <code>blackfriday.commodity.price</code>.
      */
     public final TableField<CommodityRecord, Integer> PRICE = createField(DSL.name("price"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
-     * The column <code>ecom.commodity.image_url</code>.
+     * The column <code>blackfriday.commodity.image_url</code>.
      */
     public final TableField<CommodityRecord, String> IMAGE_URL = createField(DSL.name("image_url"), SQLDataType.VARCHAR(64), this, "");
 
@@ -81,21 +82,21 @@ public class Commodity extends TableImpl<CommodityRecord> {
     }
 
     /**
-     * Create an aliased <code>ecom.commodity</code> table reference
+     * Create an aliased <code>blackfriday.commodity</code> table reference
      */
     public Commodity(String alias) {
         this(DSL.name(alias), COMMODITY);
     }
 
     /**
-     * Create an aliased <code>ecom.commodity</code> table reference
+     * Create an aliased <code>blackfriday.commodity</code> table reference
      */
     public Commodity(Name alias) {
         this(alias, COMMODITY);
     }
 
     /**
-     * Create a <code>ecom.commodity</code> table reference
+     * Create a <code>blackfriday.commodity</code> table reference
      */
     public Commodity() {
         this(DSL.name("commodity"), null);
@@ -107,7 +108,7 @@ public class Commodity extends TableImpl<CommodityRecord> {
 
     @Override
     public Schema getSchema() {
-        return Ecom.ECOM;
+        return Blackfriday.BLACKFRIDAY;
     }
 
     @Override
