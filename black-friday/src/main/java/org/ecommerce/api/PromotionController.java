@@ -61,6 +61,9 @@ public class PromotionController {
     );
   }
 
+  /**
+   * Lock Available Stock in Cache
+   */
   @PostMapping("/lock/id/{id}")
   public ResponseEntity<Boolean> lockPromotionStock(@PathVariable("id") String id) {
     // save to cache
@@ -84,6 +87,9 @@ public class PromotionController {
     return ResponseEntity.status(ResponseUtil.SUCCESS).body(isLocked);
   }
 
+  /**
+   * Revert Available Stock in Cache
+   */
   @PostMapping("/revert/id/{id}")
   public ResponseEntity<Boolean> revertPromotionStock(@PathVariable("id") String id) {
     PromotionDomain promotionDomain = promotionServiceApplication.getPromotionById(id);

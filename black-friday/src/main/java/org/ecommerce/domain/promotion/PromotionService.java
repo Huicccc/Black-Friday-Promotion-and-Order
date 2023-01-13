@@ -37,10 +37,12 @@ public class PromotionService {
     return promotionStockOperation.lockStock(id);
   }
 
+  @Transactional(propagation = Propagation.REQUIRED)
   public boolean deductStock(String id) {
     return promotionStockOperation.deductStock(id);
   }
 
+  @Transactional(propagation = Propagation.REQUIRED)
   public boolean revertStock(String id) {
     return promotionStockOperation.revertStock(id);
   }

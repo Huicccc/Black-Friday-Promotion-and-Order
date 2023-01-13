@@ -77,8 +77,13 @@ public class RedisPromotionCacheDomainRepo implements PromotionCacheRepository,
     try {
       Long stock = redisTemplate.execute(redisScript,
           Arrays.asList(PromotionStockCacheDomain.createPromotionStockKey(id)));
-      // TODO: modify return
-      return !Objects.isNull(stock) && stock >= 0L;
+      if (!Objects.isNull(stock) && stock >= 0L) {
+        log.info("Redis: lock-stock in cache successfully");
+        return true;
+      } else {
+        log.info("Redis: lock-stock in cache failed");
+        return false;
+      }
     } catch (Throwable throwable) {
       log.error("Fail to lock stock for promotionCommodityKey: {}",
           PromotionStockCacheDomain.createPromotionStockKey(id));
@@ -99,8 +104,13 @@ public class RedisPromotionCacheDomainRepo implements PromotionCacheRepository,
     try {
       Long stock = redisTemplate.execute(redisScript,
           Arrays.asList(PromotionStockCacheDomain.createPromotionStockKey(id)));
-      // TODO: modify return
-      return !Objects.isNull(stock) && stock >= 0L;
+      if (!Objects.isNull(stock) && stock >= 0L) {
+        log.info("Redis: revert-stock in cache successfully");
+        return true;
+      } else {
+        log.info("Redis: revert-stock in cache failed");
+        return false;
+      }
     } catch (Throwable throwable) {
       log.error("Fail to lock stock for promotionCommodityKey: {}",
           PromotionStockCacheDomain.createPromotionStockKey(id));

@@ -66,6 +66,7 @@ public class JoopPromotionDomainRepo implements PromotionRepository, PromotionSt
   }
 
   @Override
+  @Transactional(propagation = Propagation.REQUIRED)
   public boolean deductStock(String id) {
     /**
      * update promotion
@@ -83,6 +84,7 @@ public class JoopPromotionDomainRepo implements PromotionRepository, PromotionSt
   }
 
   @Override
+  @Transactional(propagation = Propagation.REQUIRED)
   public boolean revertStock(String id) {
     /**
      * update promotion
