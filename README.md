@@ -7,6 +7,12 @@
 - Implemented check order status, and cancel orders by RocketMQ delay message queue. 
 
 
+
+https://user-images.githubusercontent.com/105135459/212686805-6c761c5d-07cd-4a07-8ba0-f25c4b4d992a.mov
+
+
+
+
 ## System Design
 <img width="900" alt="Screen Shot 2022-12-16 at 10 25 34 PM" src="https://user-images.githubusercontent.com/105135459/208221618-dcedf44f-d0d9-4af2-979d-36059f3409df.png">
 
