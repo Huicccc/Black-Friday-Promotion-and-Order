@@ -23,10 +23,10 @@ https://user-images.githubusercontent.com/105135459/212686805-6c761c5d-07cd-4a07
 ## Version1
 
 - Tables & API </br>
-[Promotion Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/Promotion%20API.md) </br>
+[Promotion Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/PromotionService.md) </br>
 [Order Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/OrderService.md) </br>
-[User Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/User%20API.md) </br>
-[Commodity Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/Commodity%20API.md) </br>
+[User Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/UserAPI.md) </br>
+[Commodity Service](https://github.com/Huicccc/Black-Friday-Promotion-and-Order/blob/main/CommodityService.md) </br>
 
 - Promotion Oversell Strategies: Oversell, Synchronized and Optimistic Lock
 ![Picture1](https://user-images.githubusercontent.com/105135459/210188109-ff83d6bf-f180-4567-b1fe-5c2441736111.png)
